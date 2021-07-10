@@ -1,0 +1,5 @@
+所有文件上传功能，都会涉及到上传目录的权限，需要创建一个apache有写权限的目录
+upload.php  只有文件上传功能
+upload1.php  使用js在前端验证文件后缀
+upload2.php 使用php在后端验证文件类型content-type
+upload3.php 使用php在后端验证文件类型content-type和文件后缀

@@ -1,0 +1,18 @@
+#
+# This group is read both both by the client and the server
+# use it for options that affect everything
+#
+
+[mysqld]
+general-log
+general-log-file = /var/log/mariadb/queries.log
+log-output = file
+skip-name-resolve
+
+[client-server]
+
+#
+# include all files from the config directory
+#
+!includedir /etc/my.cnf.d
+

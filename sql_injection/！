@@ -1,0 +1,38 @@
+
+<?php
+
+if(isset($_GET['submit1'])){
+	$id=$_GET['id'];
+	$con=mysqli_connect('localhost','root','');
+	if($con){
+		mysqli_select_db($con,'test');
+		$query=mysqli_query($con,"SELECT username,score FROM student WHERE id='$id';");
+		$num=mysqli_num_rows($query);
+		$i=0;
+		while($i<$num){
+			$result=mysqli_fetch_assoc($query);
+			echo "name:".$result["username"]."<br/>";
+			echo "score:".$result["score"]."<br/>";
+			$i++;
+		}
+	}
+}
+mysqli_close($con);
+?>
+
+    <head lang="en">
+        <meta charset="utf-8">
+        <title>GET sql injection</title>
+    </head>
+
+    <body>
+        <form action="./6.php" method="GET">
+            user id:<input type="text" name="id">
+	    <input type="submit" value="submit1" name="submit1">
+	    <br/>
+	    user score:<input type="text" name="score">
+            <input type="submit" value="submit2" name="submit2">
+        </form>
+    </body>
+</html>
+
